@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "philiprehberger-type-parse"
-version = "0.1.0"
+version = "0.1.1"
 description = "Parse strings into Python types intelligently — booleans, numbers, dates, None, lists"
 readme = "README.md"
 license = "MIT"
