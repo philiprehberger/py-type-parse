@@ -6,7 +6,7 @@
 
 Parse strings into Python types intelligently — booleans, numbers, dates, datetimes, UUIDs, filesizes, None, lists.
 
-## Install
+## Installation
 
 ```bash
 pip install philiprehberger-type-parse

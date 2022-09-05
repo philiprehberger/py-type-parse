@@ -24,9 +24,10 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/philiprehberger/py-type-parse"
+Homepage = "https://github.com/philiprehberger/py-type-parse#readme"
 Repository = "https://github.com/philiprehberger/py-type-parse"
 Issues = "https://github.com/philiprehberger/py-type-parse/issues"
+Changelog = "https://github.com/philiprehberger/py-type-parse/blob/main/CHANGELOG.md"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/philiprehberger_type_parse"]
