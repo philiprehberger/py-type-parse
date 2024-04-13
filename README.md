@@ -3,6 +3,7 @@
 [![Tests](https://github.com/philiprehberger/py-type-parse/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/py-type-parse/actions/workflows/publish.yml)
 [![PyPI version](https://img.shields.io/pypi/v/philiprehberger-type-parse.svg)](https://pypi.org/project/philiprehberger-type-parse/)
 [![License](https://img.shields.io/github/license/philiprehberger/py-type-parse)](LICENSE)
+[![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
 
 Parse strings into Python types intelligently — booleans, numbers, dates, datetimes, UUIDs, filesizes, None, lists.
 
