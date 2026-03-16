@@ -1,5 +1,9 @@
 # philiprehberger-type-parse
 
+[![Tests](https://github.com/philiprehberger/py-type-parse/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/py-type-parse/actions/workflows/publish.yml)
+[![PyPI version](https://img.shields.io/pypi/v/philiprehberger-type-parse.svg)](https://pypi.org/project/philiprehberger-type-parse/)
+[![License](https://img.shields.io/github/license/philiprehberger/py-type-parse)](LICENSE)
+
 Parse strings into Python types intelligently — booleans, numbers, dates, None, lists.
 
 ## Install
