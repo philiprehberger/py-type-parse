@@ -74,6 +74,14 @@ parse_list("x|y|z", separator="|")  # ["x", "y", "z"]
 | `parse_date(value, *, dayfirst=False)` | Parse common date formats into `datetime.date` |
 | `parse_list(value, *, separator=",")` | Split into trimmed, non-empty strings |
 
+
+## Development
+
+```bash
+pip install -e .
+python -m pytest tests/ -v
+```
+
 ## License
 
 MIT
