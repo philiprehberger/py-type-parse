@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0 (2026-03-16)
+
+- Add `parse_datetime()` with timezone support
+- Add `parse_time()` for time-only strings
+- Add `parse_uuid()` for UUID/GUID strings
+- Add `parse_bytes()` for filesize strings (KB, MB, GB, KiB, MiB, etc.)
+- Add `coerce` parameter to `parse_list()` for automatic type conversion
+- Include UUID and datetime in `parse()` auto-detection chain
+
 ## 0.1.5
 
 - Add basic import test
