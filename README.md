@@ -2,8 +2,7 @@
 
 [![Tests](https://github.com/philiprehberger/py-type-parse/actions/workflows/publish.yml/badge.svg)](https://github.com/philiprehberger/py-type-parse/actions/workflows/publish.yml)
 [![PyPI version](https://img.shields.io/pypi/v/philiprehberger-type-parse.svg)](https://pypi.org/project/philiprehberger-type-parse/)
-[![License](https://img.shields.io/github/license/philiprehberger/py-type-parse)](LICENSE)
-[![Sponsor](https://img.shields.io/badge/sponsor-GitHub%20Sponsors-ec6cb9)](https://github.com/sponsors/philiprehberger)
+[![Last updated](https://img.shields.io/github/last-commit/philiprehberger/py-type-parse)](https://github.com/philiprehberger/py-type-parse/commits/main)
 
 Parse strings into Python types intelligently — booleans, numbers, dates, datetimes, UUIDs, filesizes, None, lists.
 
@@ -124,7 +123,6 @@ parse_list("42, 3.14, none", coerce=True)    # [42, 3.14, None]
 | `parse_bytes(value)` | Parse filesize strings (KB, MB, GB, KiB, MiB, GiB, etc.) to bytes |
 | `parse_list(value, *, separator=",", coerce=False)` | Split into trimmed, non-empty strings; optionally auto-detect types |
 
-
 ## Development
 
 ```bash
@@ -132,6 +130,24 @@ pip install -e .
 python -m pytest tests/ -v
 ```
 
+## Support
+
+If you find this project useful:
+
+⭐ [Star the repo](https://github.com/philiprehberger/py-type-parse)
+
+🐛 [Report issues](https://github.com/philiprehberger/py-type-parse/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+
+💡 [Suggest features](https://github.com/philiprehberger/py-type-parse/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement)
+
+❤️ [Sponsor development](https://github.com/sponsors/philiprehberger)
+
+🌐 [All Open Source Projects](https://philiprehberger.com/open-source-packages)
+
+💻 [GitHub Profile](https://github.com/philiprehberger)
+
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/philiprehberger)
+
 ## License
 
-MIT
+[MIT](LICENSE)
