@@ -4,6 +4,8 @@
 [![PyPI version](https://img.shields.io/pypi/v/philiprehberger-type-parse.svg)](https://pypi.org/project/philiprehberger-type-parse/)
 [![Last updated](https://img.shields.io/github/last-commit/philiprehberger/py-type-parse)](https://github.com/philiprehberger/py-type-parse/commits/main)
 
+![philiprehberger-type-parse](https://raw.githubusercontent.com/philiprehberger/py-type-parse/main/package-card.webp)
+
 Parse strings into Python types intelligently — booleans, numbers, dates, datetimes, UUIDs, filesizes, None, lists.
 
 ## Installation
@@ -109,11 +111,29 @@ parse_list("1, true, hello", coerce=True)    # [1, True, "hello"]
 parse_list("42, 3.14, none", coerce=True)    # [42, 3.14, None]
 ```
 
+### Batch Parsing
+
+Parse a list of strings in one call. Pass ``target_type`` to coerce every value to a specific type instead of relying on auto-detection.
+
+```python
+from philiprehberger_type_parse import parse_many
+
+parse_many(["1", "true", "2026-03-15"])
+# [1, True, datetime.date(2026, 3, 15)]
+
+parse_many(["1", "2", "3"], target_type=int)
+# [1, 2, 3]
+
+parse_many(["yes", "no", "on"], target_type=bool)
+# [True, False, True]
+```
+
 ## API
 
-| Function | Description |
-|----------|-------------|
+| Function / Class | Description |
+|------------------|-------------|
 | `parse(value)` | Auto-detect type: None, bool, int, float, UUID, datetime, date, or str |
+| `parse_many(values, target_type=None)` | Batch parse a list of strings, optionally coerced to a single target type |
 | `parse_bool(value)` | Parse true/yes/1/on/y or false/no/0/off/n |
 | `parse_number(value)` | Parse int or float with commas, currency, percentages |
 | `parse_date(value, *, dayfirst=False)` | Parse common date formats into `datetime.date` |

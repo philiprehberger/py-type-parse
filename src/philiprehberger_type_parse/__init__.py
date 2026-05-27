@@ -5,6 +5,7 @@ from __future__ import annotations
 import datetime
 import re
 import uuid as _uuid_mod
+from typing import Callable
 
 __all__ = [
     "parse",
@@ -13,6 +14,7 @@ __all__ = [
     "parse_date",
     "parse_datetime",
     "parse_list",
+    "parse_many",
     "parse_number",
     "parse_time",
     "parse_uuid",
@@ -347,6 +349,51 @@ def parse_bytes(value: str) -> int:
         multiplier = _BYTES_UNITS.get(unit_str.lower(), 1)
 
     return int(number * multiplier)
+
+
+_TARGET_PARSERS: dict[type, Callable[[str], object]] = {
+    bool: parse_bool,
+    int: lambda v: int(parse_number(v)),
+    float: lambda v: float(parse_number(v)),
+    _uuid_mod.UUID: parse_uuid,
+    datetime.datetime: parse_datetime,
+    datetime.date: parse_date,
+    datetime.time: parse_time,
+    str: lambda v: v.strip(),
+}
+
+
+def parse_many(
+    values: list[str],
+    target_type: type | None = None,
+) -> list[object]:
+    """Parse a list of strings, optionally coerced to a single target type.
+
+    Args:
+        values: Strings to parse.
+        target_type: When provided, every value is parsed with the parser for that
+            type (``bool``, ``int``, ``float``, ``uuid.UUID``, ``datetime.datetime``,
+            ``datetime.date``, ``datetime.time``, ``str``). When ``None`` (default),
+            each value is auto-detected via :func:`parse`.
+
+    Returns:
+        A list of parsed values, in the same order as the input.
+
+    Raises:
+        ValueError: If ``target_type`` is unsupported or any value fails to parse
+            for the requested type.
+    """
+    if target_type is None:
+        return [parse(v) for v in values]
+
+    parser = _TARGET_PARSERS.get(target_type)
+    if parser is None:
+        msg = (
+            f"Unsupported target_type {target_type!r}. Supported: "
+            f"{sorted(t.__name__ for t in _TARGET_PARSERS)}"
+        )
+        raise ValueError(msg)
+    return [parser(v) for v in values]
 
 
 def parse_list(
